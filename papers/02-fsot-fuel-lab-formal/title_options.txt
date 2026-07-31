@@ -1,0 +1,8 @@
+RECOMMENDED:
+Parameter-Free Scalar Engine for Grounded Fuel Thermochemistry: FSOT Fuel Lab with Formal Priors and Preregistered Predictions
+
+SOFTER:
+Formally Certified Fuel-Lab Readouts from a Seed-Derived Scalar Engine: Lean Priors and PRED-034 on FSOT Alternative Fuels
+
+METHODS-FIRST:
+Lean 4 Priors and Zero Free-Parameter Thermochemistry for FSOT-Designed Fuels

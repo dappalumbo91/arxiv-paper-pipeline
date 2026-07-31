@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!60!black}
+
+\title{{{TITLE}}}
+\author{{{AUTHOR}}\\
+\textit{Independent researcher}\\[0.5em]
+\url{{{REPO_URL}}}}
+\date{{{DATE}}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% Keep short first sentences. Paste also into abstract.txt for arXiv form.
+REPLACE abstract.
+\end{abstract}
+
+\noindent\textbf{Keywords:} REPLACE.
+
+\vspace{0.6em}
+\noindent
+\begin{center}
+\begin{minipage}{0.95\linewidth}
+\hrule\vspace{0.4em}
+{\small
+\textbf{Software availability.}
+Code and verification: \url{{{REPO_URL}}}\\
+Recommended pin: tag \texttt{REPLACE} (see \texttt{FREEZE.yaml}).
+\begin{verbatim}
+git clone {{REPO_URL}}.git
+cd REPO
+git checkout TAG
+pip install -r requirements.txt
+python scripts/REPLACE_BUNDLE.py
+\end{verbatim}
+}
+\vspace{0.4em}\hrule
+\end{minipage}
+\end{center}
+
+\section{Introduction}
+\label{sec:intro}
+% Problem, operational claim, scope, contributions, claim taxonomy
+
+\section{Technical definition}
+\label{sec:def}
+% Full math — not sketches
+
+\section{Methods}
+\label{sec:methods}
+% Formal verification / experimental methodology
+
+\section{Results}
+\label{sec:results}
+% Tables + figures; captions include path + regenerate command
+
+\section{Falsifiability and reproduction}
+\label{sec:repro}
+% One-command + how to reject
+
+\section{Discussion}
+\label{sec:disc}
+% Related work, limitations, reading the claim stack
+
+\section{Conclusion}
+\label{sec:conc}
+
+\section*{Acknowledgments}
+% Generative AI tools are not co-authors if used for assembly.
+
+\section*{Data and code availability}
+Repository: \url{{{REPO_URL}}}. Pin: tag \texttt{REPLACE}.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+% DO NOT put pre-submission checklists in this PDF.
+\end{document}

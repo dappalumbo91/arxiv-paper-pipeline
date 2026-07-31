@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+
+\bibitem{Bobbin2024}
+Maxwell~P. Bobbin et~al.
+\newblock Formalizing chemical physics using the {Lean} theorem prover.
+\newblock {\em Digital Discovery}, 3:264--280, 2024.
+
+\bibitem{HeywoodICE}
+John~B. Heywood.
+\newblock Internal combustion engine fundamentals.
+\newblock {\em McGraw-Hill}, 1988.
+\newblock Classic ICE thermochemistry reference context for engine-simulator
+  baselines.
+
+\bibitem{Lean4}
+Leonardo~de Moura and Sebastian Ullrich.
+\newblock The {Lean} 4 theorem prover and programming language.
+\newblock In {\em Automated Deduction -- CADE 28}, volume 12699 of {\em LNCS},
+  pages 625--635. Springer, 2021.
+
+\bibitem{FSOTPaper01}
+Damian~Arthur Palumbo.
+\newblock Formally verified parameter-free scalar engine for contested
+  cosmology: Lean~4 and multi-prover certification of fluid spacetime
+  omni-theory, 2026.
+\newblock Companion manuscript;
+  Desktop/arxiv-papers/01-fsot-formal-contested-cosmology.
+
+\bibitem{FSOT21Lean}
+Damian~Arthur Palumbo.
+\newblock {FSOT-2.1-Lean}: Fluid spacetime omni-theory formalization and
+  verification.
+\newblock \url{https://github.com/dappalumbo91/FSOT-2.1-Lean}, 2026.
+\newblock Tag v2.6-arxiv-paper01 (commit 8a44947).
+
+\bibitem{Mathlib}
+{The mathlib Community}.
+\newblock The {Lean} mathematical library, 2020.
+
+\end{thebibliography}

@@ -1,0 +1,5 @@
+REPLACE: abstract body, ASCII-friendly for arXiv form. Max 1920 characters.
+
+Paragraph 1: problem + contribution.
+Paragraph 2: methods + headline numbers.
+Paragraph 3: scope + reproducibility / GitHub.

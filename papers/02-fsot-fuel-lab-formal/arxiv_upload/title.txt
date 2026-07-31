@@ -1,0 +1,1 @@
+Parameter-Free Scalar Engine for Grounded Fuel Thermochemistry: FSOT Fuel Lab with Formal Priors and Preregistered Predictions

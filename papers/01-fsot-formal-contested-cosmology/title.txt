@@ -1,0 +1,1 @@
+Formally Verified Parameter-Free Scalar Engine for Contested Cosmology: Lean 4 and Multi-Prover Certification of Fluid Spacetime Omni-Theory

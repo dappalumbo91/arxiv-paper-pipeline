@@ -1,0 +1,28 @@
+﻿# LaTeX junk
+*.aux
+*.log
+*.out
+*.blg
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local clones (never commit science monorepos here)
+_clean_clone/
+**/_clean_clone/
+*.lake/
+.lake/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

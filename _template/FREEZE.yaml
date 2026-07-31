@@ -1,0 +1,42 @@
+# Immutable claim freeze — fill before finalizing prose numbers
+edition_id: "arxiv-{{SLUG}}-{{DATE}}"
+edition_date: "{{DATE}}"
+manuscript_date: "{{DATE}}"
+author: "{{AUTHOR}}"
+
+repository:
+  url: "{{REPO_URL}}"
+  clone: "git clone {{REPO_URL}}.git"
+  commit: "REPLACE_WITH_FULL_SHA"
+  commit_short: "REPLACE"
+  recommended_tag: "vX.Y-arxiv-{{SLUG}}"
+  tag_pushed: false
+
+oracle:
+  path: "vendor/OR_PATH"
+  sha256: "REPLACE_OR_N_A"
+
+toolchains:
+  notes: "e.g. leanprover/lean4:v4.31.0; python>=3.11"
+
+formal:
+  overall_ok: true
+  atomic_obligations_min: 0
+  sorry_count_formal: 0
+  acceptance_rule: "overall_ok and atomic_count >= atomic_obligations_min"
+
+empirical:
+  headline_metric_name: "REPLACE"
+  headline_metric_value: 0.0
+  notes: "pooled median / green gates / etc."
+
+reproduction:
+  one_command: "python scripts/REPLACE_BUNDLE.py"
+  extra_commands: []
+
+artifacts_required_after_bundle:
+  - data/REPLACE_claims.json
+
+arxiv:
+  primary: "{{PRIMARY_CATEGORY}}"
+  secondary: []

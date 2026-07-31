@@ -1,0 +1,13 @@
+TITLE OPTIONS for {{SLUG}}
+
+A (working):
+{{TITLE}}
+
+B (softer / less claim-forward):
+REPLACE
+
+C (methods-first):
+REPLACE
+
+Pick one → copy into title.txt and paper.tex.
+Avoid "resolving/solved" unless community-statistical bar is met.

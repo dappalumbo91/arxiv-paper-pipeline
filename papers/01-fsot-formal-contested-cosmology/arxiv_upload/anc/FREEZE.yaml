@@ -1,0 +1,95 @@
+# Paper 01 — immutable claim freeze for arXiv + independent reproduction
+# Do not edit casually. Bump edition_id and re-verify if any number changes.
+
+edition_id: "arxiv-paper01-2026-07-16"
+edition_date: "2026-07-16"
+manuscript_date: "2026-07-31"
+author: "Damian Arthur Palumbo"
+
+repository:
+  url: "https://github.com/dappalumbo91/FSOT-2.1-Lean"
+  clone: "git clone https://github.com/dappalumbo91/FSOT-2.1-Lean.git"
+  # Claims numbers verified at 81bc893; repro fix (matplotlib) on top:
+  commit: "81bc89364d206aca6da4c65f3faa875ad168cc8e"
+  commit_short: "81bc893"
+  # Recommended checkout for scientists (includes requirements fix; same claim numbers):
+  commit_with_repro_fix: "8a449478f39bffec5c64eb52eba112a68787da1b"
+  commit_with_repro_fix_short: "8a44947"
+  recommended_tag: "v2.6-arxiv-paper01"
+  tag_pushed: true
+  tag_commit: "8a449478f39bffec5c64eb52eba112a68787da1b"
+  remote: "origin https://github.com/dappalumbo91/FSOT-2.1-Lean.git"
+
+oracle:
+  path: "vendor/fsot_compute.py"
+  sha256: "D1D38A185487B452E470AC68ECE2EB45AEB1CA9CE25FC9BF9564C19633FFBE70"
+
+toolchains:
+  lean: "leanprover/lean4:v4.31.0"
+  mathlib: "v4.31.0"
+  python: ">=3.10 (recommended 3.11+)"
+  python_packages: "requirements.txt (numpy, mpmath, sympy, pytest, PyYAML, pypdf)"
+
+formal:
+  overall_ok: true
+  github_ready: true
+  sorry_count_formal: 0
+  lean_build_ok: true
+  proved_claims_certificate: 65
+  # Peer-review claims manifest (data/publication_claims_manifest.json):
+  atomic_obligations_claims_manifest: 1863
+  # Live cross-proof report (data/cross_proof_verification_report.json):
+  # Clean GitHub clone at 81bc893: atomic_provable_count = 1863
+  # Physical archive snapshot had 1873 at one point; accept >= 1863
+  atomic_provable_count_cross_proof: 1863
+  atomic_provable_count_archive_note: 1873
+  seven_way_bare_metal: true
+  # Acceptance for scientists: overall_ok==true AND atomic_obligations >= 1863
+  acceptance_rule: "overall_ok and atomic_count >= 1863"
+  clean_clone_verified: "2026-07-31 PASS — see CLEAN_CLONE_REPRO_REPORT.md"
+
+empirical:
+  routed_domains: 402
+  empirical_records: 536740
+  green_gate_pct: 0.5
+  # publication claims / README edition:
+  benchmark_domains_green: "394/394"
+  cross_domain_pooled_median_pct: 0.013003
+  # margin audit may list more domain files (405/405 observed in archive audit)
+  contested:
+    observable_count: 13
+    fsot_pooled_median_pct: 0.029749
+    lcdm_sm_typical_baseline_pct: 15.0
+  h0:
+    planck2018_kms_mpc: 67.36
+    planck2018_unc: 0.54
+    fsot_worked_cmb_kms_mpc: 67.270
+    fsot_worked_error_pct: 0.13
+    pred001_bridge_kms_mpc: 70.75
+    sh0es_kms_mpc: 73.04
+    pred001_discriminant: "strictly_between_planck_and_sh0es"
+
+reproduction:
+  minimal: "python scripts/run_publication_verification_bundle.py"
+  full_cross_proof: "python scripts/run_publication_verification_bundle.py --full-cross-proof"
+  lean_verify: "python scripts/fsot_verification_runner.py --portable"
+  parameter_audit: "python scripts/audit_parameter_count.py"
+  skeptic_kit: "docs/SKEPTIC_REPLICATION_KIT.md"
+
+artifacts_required_after_bundle:
+  - data/publication_claims_manifest.json
+  - data/cross_proof_verification_report.json
+  - data/contested_observables_closure.json
+  - data/benchmark_margin_audit.json
+  - data/publication/CONTESTED_SECTOR_WATCH.md
+  - data/figures/contested_fsot_vs_lcdm.png
+  - data/figures/h0_landscape.png
+  - data/figures/obligation_map_five_provers.png
+  - data/figures/spine_walkthrough.png
+
+arxiv:
+  primary: "cs.LO"
+  secondary:
+    - "astro-ph.CO"
+    - "math.LO"
+  license_note: "Use arXiv non-exclusive distribution or match repository Apache-2.0 statement"

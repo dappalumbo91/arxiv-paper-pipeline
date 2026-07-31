@@ -1,0 +1,18 @@
+TITLE OPTIONS (pick one for arXiv metadata + PDF)
+
+RECOMMENDED (balanced — formal methods first, no “solved the tension” vibe):
+Formally Verified Parameter-Free Scalar Engine for Contested Cosmology: Lean 4 and Multi-Prover Certification of Fluid Spacetime Omni-Theory
+
+SAFER / more cs.LO-native (if you want maximum formal-methods framing):
+A Lean 4 Formalization of a Parameter-Free Scalar Engine with Multi-Prover Certification and Contested Cosmological Readouts
+
+ORIGINAL (stronger claim language — higher heat on astro-ph.CO):
+Formally Verified Parameter-Free Scalar Engine Resolving Cosmological Tensions: Lean 4 + Multi-Prover Certification of Fluid Spacetime Omni-Theory
+
+LONG alternate:
+Machine-Checked Zero Free-Parameter Scalar Engine for Contested Cosmology: Lean 4 Formalization of Fluid Spacetime Omni-Theory with Five-Prover Triangulation
+
+Why recommended:
+- Keeps “formally verified” + “parameter-free” + “contested cosmology”
+- Drops “Resolving,” which reviewers can read as claiming the Hubble tension is solved
+- Body still reports PRED-001 between-anchors + 0.030% contested median honestly

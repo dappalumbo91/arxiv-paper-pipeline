@@ -1,0 +1,85 @@
+# Paper 02 freeze — Fuel Lab formal + empirical
+edition_id: "arxiv-paper02-fuel-lab-2026-07-31"
+edition_date: "2026-07-16"
+manuscript_date: "2026-07-31"
+author: "Damian Arthur Palumbo"
+companion_paper: "01-fsot-formal-contested-cosmology (scalar engine + contested cosmology)"
+
+repository:
+  url: "https://github.com/dappalumbo91/FSOT-2.1-Lean"
+  clone: "git clone https://github.com/dappalumbo91/FSOT-2.1-Lean.git"
+  commit: "8a449478f39bffec5c64eb52eba112a68787da1b"
+  commit_short: "8a44947"
+  recommended_tag: "v2.6-arxiv-paper01"
+  note: "Same public tag as Paper 01; claim numbers from fuel_lab_live_panel_benchmark + verified_desktop_cross_proof_closure"
+
+oracle:
+  path: "vendor/fsot_compute.py"
+  sha256: "D1D38A185487B452E470AC68ECE2EB45AEB1CA9CE25FC9BF9564C19633FFBE70"
+
+toolchains:
+  lean: "leanprover/lean4:v4.31.0"
+  python: ">=3.10"
+  note: "matplotlib>=3.8 in requirements.txt as of 8a44947"
+
+fuel_lab:
+  panel: "Fuel_Lab_Live_Panel"
+  lean_module: "FSOT.Formal.FuelLabLivePanelPriors"
+  record_count: 366
+  pooled_median_error_pct: 0.039349
+  D_eff: 16
+  maps_to_lean_domains: ["energy", "chemical", "material"]
+  free_parameters: 0
+  sota_typical_error_pct: 8.0
+  green_gate_pct: 0.5
+  designed_fuels:
+    - fsot_hemp_waste_grounded
+    - fsot_hemp_waste_advanced
+    - fsot_algae_oil_biodiesel
+    - fsot_mushroom_spore_fuel
+    - fsot_green_hydrogen
+    - fsot_optimax
+    - fsot_bio_spark
+  gasoline_baseline: gasoline
+  properties_count: 13
+  figure: "data/figures/verified_desktop_fuels.png"
+  benchmark: "data/fuel_lab_live_panel_benchmark.json"
+  prereg: "PRED-034"
+  prereg_name: "fsot_designed_fuel_thermochemistry_panel"
+  prereg_branch: "term1.coherence_efficiency"
+  prereg_discriminant: "within_10pct_of_observed_gap"
+
+sibling_verified_desktop:
+  Machine_And_Molecule_Live_Panel: { records: 120, pooled_median_error_pct: 0.01341 }
+  BlackHole_WhiteHole_Cycle_Live_Panel: { records: 24, pooled_median_error_pct: 0.026472 }
+  # Transporter supplementary — mention briefly, not primary claim
+  Star_Trek_Transporter_Live_Panel: { records: 1575, pooled_median_error_pct: 0.031159 }
+
+formal:
+  overall_ok: true
+  atomic_obligations_min: 1863
+  fuel_lab_obligations_in_closure: 5
+  sorry_count_formal: 0
+  verified_desktop_verdict: "VERIFIED_DESKTOP_CROSS_PROOF_READY"
+  acceptance_rule: "overall_ok and fuel pooled_median <= 0.5 and ZERO_FREE"
+
+reproduction:
+  one_command: "python scripts/run_publication_verification_bundle.py"
+  fuel_figure: "python scripts/build_verified_desktop_fuel_figure.py"
+  cross_proof_desktop: "python scripts/build_verified_desktop_cross_proof_closure.py"
+  panel_intent: "python scripts/query_fsot_domain_navigator.py --intent fuel_lab_engine"
+  parameter_audit: "python scripts/audit_parameter_count.py"
+  note: "Avoid --deep panel ingest on bare clones if external desktop caches missing; on-disk benchmarks + closure are portable"
+
+artifacts_required_after_bundle:
+  - data/fuel_lab_live_panel_benchmark.json
+  - data/verified_desktop_cross_proof_closure.json
+  - data/figures/verified_desktop_fuels.png
+  - data/cross_proof_verification_report.json
+  - data/parameter_count_audit.json
+
+arxiv:
+  primary: "cs.LO"
+  secondary:
+    - "cs.CE"
+    - "physics.chem-ph"

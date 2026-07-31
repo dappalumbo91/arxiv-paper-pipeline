@@ -1,0 +1,104 @@
+# Frozen headline claims for paper draft edition
+# Source edition: FSOT README / Appendix XI / CONTESTED_SECTOR_WATCH — 2026-07-16
+# Physical archive: I:\FSOT-Physical-Archive\02_FSOT-2.1-Lean-Full
+# GitHub: https://github.com/dappalumbo91/FSOT-2.1-Lean
+# Authority oracle SHA-256 (repin 2026-07-18): D1D38A185487B452E470AC68ECE2EB45AEB1CA9CE25FC9BF9564C19633FFBE70
+
+edition_date: "2026-07-16"
+edition_id: "arxiv-paper01-2026-07-16"
+author: "Damian Arthur Palumbo"
+repo: "https://github.com/dappalumbo91/FSOT-2.1-Lean"
+commit: "81bc89364d206aca6da4c65f3faa875ad168cc8e"
+commit_short: "81bc893"
+recommended_tag: "v2.6-arxiv-paper01"
+# Authoritative freeze file: FREEZE.yaml (use that for reproduction)
+
+scalar_engine:
+  formula: "raw_S = term1 + term2 + term3"
+  seeds: ["pi", "e", "phi", "gamma_euler", "catalan_G"]
+  free_parameters: 0
+  parameter_audit: "ZERO_FREE (scripts/audit_parameter_count.py)"
+  formal_modules:
+    lean_scalar: "FSOT/Formal/Scalar.lean"
+    float_mirror: "FSOT/Scalar.lean"
+    oracle: "vendor/fsot_compute.py"
+
+domains:
+  routed_total: 402
+  core: 35
+  extension: 367
+  empirical_records: 536740
+  public_benchmark_green: "394/394"
+  green_gate_pct: 0.5
+  cross_domain_pooled_median_pct: 0.013
+
+contested_sector:
+  observables_monitored: 13
+  fsot_pooled_median_pct: 0.030  # rounded; raw watch = 0.029749
+  lcdm_sm_typical_baseline_pct: 15.0
+  table:
+    - { id: H0_tension_SH0ES_vs_Planck, err_pct: 0.027466, ref: Riess2024_vs_Planck2018 }
+    - { id: H0_tension_Carnegie_vs_Planck, err_pct: 0.227322, ref: Freedman2019 }
+    - { id: S8_tension_Planck_vs_DES_Y3, err_pct: 0.195214, ref: DES_Y3_2022 }
+    - { id: Lithium_problem_factor, err_pct: 0.316322, ref: BBN_obs_vs_theory }
+    - { id: FRB_DM_excess_vs_IGM, err_pct: 0.042611, ref: CHIME_high_DM }
+    - { id: N_eff, err_pct: 0.009407, ref: null }
+    - { id: Omega_Lambda, err_pct: 0.0016, ref: null }
+    - { id: sigma_8, err_pct: 0.00296, ref: null }
+    - { id: tau_reion, err_pct: 0.006335, ref: null }
+    - { id: D_H_ratio, err_pct: 0.090986, ref: null }
+    - { id: r_c, err_pct: 0.341024, ref: Fornax_dwarf }
+    - { id: m_H, err_pct: 0.039905, ref: ATLAS_CMS_combined }
+    - { id: H0_FSOT_local_anchor, err_pct: 0.829427, ref: FSOT_bubble_bleed_dual_anchor }
+    - { id: H0_Planck_CMB, err_pct: 0.192564, ref: Planck2018 }
+    - { id: H0_SH0ES_local, err_pct: 0.662297, ref: Riess2024 }
+    - { id: w_a, err_pct: 0.000595, ref: DESI_DR2 }
+
+h0_worked_example:
+  planck2018_kms_mpc: 67.36
+  planck2018_unc: 0.54
+  fsot_computed_kms_mpc: 67.270
+  error_pct: 0.13
+  pred_001_bridge_kms_mpc: 70.75
+  pred_001_discriminant: strictly_between_planck_and_sh0es
+  sh0es2024_kms_mpc: 73.04
+
+preregistered:
+  range: "PRED-001–041"
+  cosmology_locks:
+    - PRED-001  # H0_bridge_scalar
+    - PRED-002  # S8_effective_lensing
+    - PRED-005  # lithium_problem_factor_bridge
+
+formal_verification:
+  # Edition prose (README / Appendix XI, 2026-07-16):
+  atomic_obligations_edition: 1863
+  overall_ok: true
+  github_ready: true
+  frameworks:
+    - Lean 4   # primary authority
+    - Coq/Rocq
+    - Isabelle/HOL
+    - F*
+    - Rust executable replay
+  # Live report snapshot (cross_proof_verification_report.json, 2026-07-16T17:33):
+  # atomic_provable_count: 1873; full_spine: 2379; seven_way_bare_metal: true
+  # Use edition 1863 in prose until freeze tag; note live report may be ≥ edition.
+  lean_toolchain: "leanprover/lean4:v4.31.0"
+  oracle_hash_sha256: "D1D38A185487B452E470AC68ECE2EB45AEB1CA9CE25FC9BF9564C19633FFBE70"
+
+core_domain_examples:
+  Cosmology: { records: 347, median_err_pct: 0.0007, tier: A_strong }
+  Astrophysics: { records: 305, median_err_pct: 0.0006, tier: A_strong }
+  High_energy_physics: { records: 151, median_err_pct: 0.0036, tier: A_strong }
+  Atomic_Physics: { records: 116, median_err_pct: 0.00095, tier: A_strong }
+
+reproduction:
+  one_command: "python scripts/run_publication_verification_bundle.py"
+  full_cross_proof: "python scripts/run_publication_verification_bundle.py --full-cross-proof"
+
+claim_taxonomy:
+  proved: "Lean/Coq/Isabelle/F*/Rust closed obligations; no sorry on formal spine"
+  numerically_verified: "Oracle hash gate; Wave-1 caches; benchmark rows"
+  empirical: "External measured agreement (H0 vs Planck, etc.) — not a Lean theorem"
+  interpretation: "Bubble-bleed narrative; fluid ontology — not machine-checked physics truth"

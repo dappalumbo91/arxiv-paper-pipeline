@@ -1,0 +1,4 @@
+﻿# Matplotlib is now in the FSOT-2.1-Lean requirements.txt (matplotlib>=3.8).
+# This file is only needed if you pin an older commit before that fix:
+#   pip install matplotlib>=3.8
+matplotlib>=3.8

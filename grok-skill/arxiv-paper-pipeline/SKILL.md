@@ -124,7 +124,7 @@ Write in this order:
 
 1. Title options (`title_options.txt`) → pick non-overclaiming title  
 2. Abstract (`abstract.txt`, ≤1920 chars for arXiv form)  
-3. `paper.tex` (primary) + optional `paper.md` working draft  
+3. **Topic-named** `{slug}.tex` / `{slug}.pdf` (never bare `paper.pdf`) + optional working draft  
 4. Software availability box + GitHub URL  
 5. Intro + contributions + claim taxonomy  
 6. Math / methods (full definitions, not sketches)  
@@ -146,7 +146,7 @@ Required in the paper directory:
 
 | File | Role |
 |------|------|
-| `paper.tex` / `paper.pdf` | Manuscript |
+| `{slug}.tex` / `{slug}.pdf` | Manuscript (topic-named; use `build-pdf.ps1`) |
 | `references.bib` / `paper.bbl` | Bibliography |
 | `abstract.txt` | arXiv abstract field |
 | `comments.txt` | arXiv comments field |
@@ -216,7 +216,8 @@ User submits in Chrome. Agent prepares paste blocks only.
 5. **No arXiv login automation.**  
 6. Prefer LaTeX `article` + `plain` bib for first pass; keep sources flat-friendly for arXiv.  
 7. Keep scope tight; push breadth to GitHub living thesis.  
-8. Title: avoid “resolving / solved” unless empirically and statistically justified in community terms.
+8. Title: avoid “resolving / solved” unless empirically and statistically justified in community terms.  
+9. **Topic-named PDFs:** output must be `{slug}.pdf` / `{slug}.tex` (from folder slug or `manuscript_basename.txt`), **never** leave the deliverable as bare `paper.pdf`. Use `build-pdf.ps1`.
 
 ---
 

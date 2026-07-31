@@ -17,7 +17,7 @@
 1 Inventory source repo / archive
 2 FREEZE.yaml (numbers + commit pins)
 3 Clean-clone verification + fix repo gaps
-4 Draft paper.tex (math, methods, results, repro)
+4 Draft {slug}.tex → build {slug}.pdf (topic-named, never bare paper.pdf)
 5 Scientist kit + claim checker
 6 Polish (title, abstract, eqs, captions, bib)
 7 PRE_SUBMISSION_CHECKLIST (admin only — not in PDF)
@@ -160,14 +160,29 @@ Always ship:
 
 ## Phase 7 — Pre-submit (admin file only)
 
-Use `PRE_SUBMISSION_CHECKLIST.md` — **never** paste into `paper.tex`.
+Use `PRE_SUBMISSION_CHECKLIST.md` — **never** paste into the manuscript `.tex`.
+
+### Manuscript file naming (required)
+
+The PDF and TeX **must** be named for the topic/slug, not `paper.pdf`:
+
+| Wrong | Right |
+|-------|--------|
+| `paper.pdf` | `02-fsot-fuel-lab-formal.pdf` |
+| `paper.tex` | `02-fsot-fuel-lab-formal.tex` |
+
+`new-paper.ps1` sets `manuscript_basename.txt` to the folder slug. Build with:
+
+```powershell
+.\build-pdf.ps1
+```
 
 Build upload package:
 
 ```powershell
 # from paper dir
-pdflatex paper; bibtex paper; pdflatex paper; pdflatex paper
-# fill arxiv_upload/ then:
+.\build-pdf.ps1
+# copy {basename}.tex, {basename}.bbl, references.bib, figures/ into arxiv_upload/
 Compress-Archive -Path arxiv_upload\* -DestinationPath arxiv_source_v1.zip -Force
 ```
 
@@ -210,7 +225,8 @@ Each paper:
 
 ```text
 NN-slug/
-  paper.tex paper.pdf references.bib paper.bbl
+  {slug}.tex {slug}.pdf references.bib {slug}.bbl
+  manuscript_basename.txt build-pdf.ps1
   abstract.txt comments.txt title.txt title_options.txt
   FREEZE.yaml
   SCIENTIST_REPRODUCE.md

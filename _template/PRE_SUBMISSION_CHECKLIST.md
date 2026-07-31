@@ -21,8 +21,9 @@
 - [ ] No admin checklist in PDF  
 - [ ] Figures captions have regenerate commands  
 - [ ] Bib pin matches software box  
-- [ ] `paper.pdf` builds  
-- [ ] `arxiv_source_v1.zip` refreshed  
+- [ ] Topic-named PDF builds: `{{MANUSCRIPT_BASENAME}}.pdf` (via `.\build-pdf.ps1`)  
+- [ ] No bare `paper.pdf` left in the package  
+- [ ] `arxiv_source_v1.zip` uses `{{MANUSCRIPT_BASENAME}}.tex` as main file  
 
 ## D. arXiv form (Chrome)
 

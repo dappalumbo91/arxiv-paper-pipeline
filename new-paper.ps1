@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Scaffold a new arXiv paper package from the standardized template.
 
@@ -66,14 +66,18 @@ Copy-Item -Path $template -Destination $dest -Recurse -Force
 
 # Token replace in text files
 $today = Get-Date -Format "yyyy-MM-dd"
+# Manuscript files must be topic-named: {slug}.tex -> {slug}.pdf (never bare paper.pdf)
+$manuscriptBase = $slug
+
 $replacements = @{
-  "{{TITLE}}"            = $Title
-  "{{AUTHOR}}"           = $Author
-  "{{SLUG}}"             = $slug
-  "{{DATE}}"             = $today
-  "{{REPO_URL}}"         = $(if ($RepoUrl) { $RepoUrl } else { "https://github.com/OWNER/REPO" })
-  "{{PRIMARY_CATEGORY}}" = $PrimaryCategory
-  "{{PAPER_DIR}}"         = $dest
+  "{{TITLE}}"                 = $Title
+  "{{AUTHOR}}"                = $Author
+  "{{SLUG}}"                  = $slug
+  "{{MANUSCRIPT_BASENAME}}"   = $manuscriptBase
+  "{{DATE}}"                  = $today
+  "{{REPO_URL}}"              = $(if ($RepoUrl) { $RepoUrl } else { "https://github.com/OWNER/REPO" })
+  "{{PRIMARY_CATEGORY}}"      = $PrimaryCategory
+  "{{PAPER_DIR}}"              = $dest
 }
 
 $exts = @("*.md", "*.txt", "*.yaml", "*.yml", "*.tex", "*.ps1", "*.py", "*.bib")
@@ -94,8 +98,16 @@ foreach ($sub in @("figures", "logs", "arxiv_upload", "arxiv_upload\figures", "a
   New-Item -ItemType Directory -Path (Join-Path $dest $sub) -Force | Out-Null
 }
 
-Write-Host ""
-Write-Host "Created: $dest"
+# Topic-named manuscript (required): slug.tex / slug.pdf
+Set-Content -Path (Join-Path $dest "manuscript_basename.txt") -Value $manuscriptBase -Encoding ascii -NoNewline
+$legacyTex = Join-Path $dest "paper.tex"
+$topicTex = Join-Path $dest "$manuscriptBase.tex"
+if ((Test-Path $legacyTex) -and -not (Test-Path $topicTex)) {
+  Rename-Item $legacyTex "$manuscriptBase.tex"
+}
+# Copy build helper already in template as build-pdf.ps1
+
+Write-Host ""Write-Host "Created: $dest"
 Write-Host "Next:"
 Write-Host "  1. Edit FREEZE.yaml with real pins from your source repo"
 Write-Host "  2. In Grok Build: /arxiv-paper  (or open PLAYBOOK.md)"

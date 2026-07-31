@@ -61,6 +61,15 @@ papers/
 
 ---
 
+## Manuscript naming
+
+PDFs and TeX sources are **topic-named** after the paper slug (folder name):
+
+- `papers/01-fsot-formal-contested-cosmology/01-fsot-formal-contested-cosmology.pdf`
+- `papers/02-fsot-fuel-lab-formal/02-fsot-fuel-lab-formal.pdf`
+
+Never leave the deliverable as bare `paper.pdf`. Scaffold sets `manuscript_basename.txt`; build with `.\build-pdf.ps1`.
+
 ## Design rules (non-negotiable)
 
 - Numbers come from **FREEZE.yaml** / live JSON — not memory.  
@@ -76,3 +85,4 @@ papers/
 
 Apache-2.0 for pipeline tooling unless a paper folder states otherwise.  
 Manuscripts remain the author's scientific work; cite the relevant paper folder and the FSOT-2.1-Lean tag when reproducing numerical claims.
+

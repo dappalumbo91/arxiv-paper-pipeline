@@ -4,7 +4,7 @@
 arXiv requires *you* to authenticate and accept the license. What follows is every field, ready to copy-paste.
 
 **Package on disk:**  
-`C:\Users\damia\Desktop\arxiv-papers\01-fsot-formal-contested-cosmology\`
+`<local folder, not included in repo: 01-fsot-formal-contested-cosmology>`
 
 | File | Use |
 |------|-----|

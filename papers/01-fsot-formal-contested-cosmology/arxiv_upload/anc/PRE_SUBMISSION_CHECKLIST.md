@@ -36,7 +36,7 @@ Keep this file in the paper package only. Do **not** paste it into `paper.tex` o
 **Command for B5 (optional archive log):**
 
 ```powershell
-cd C:\Users\damia\Desktop\arxiv-papers\_clean_clone\FSOT-2.1-Lean
+cd _clean_clone/FSOT-2.1-Lean
 git checkout v2.6-arxiv-paper01
 python ..\..\01-fsot-formal-contested-cosmology\verify_paper_claims.py --fsot-root . --strict-hash --require-cross-proof *> ..\..\01-fsot-formal-contested-cosmology\logs\verify_paper_claims_clean.log
 ```

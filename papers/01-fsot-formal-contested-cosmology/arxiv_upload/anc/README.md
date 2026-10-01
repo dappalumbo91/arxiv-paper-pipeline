@@ -23,7 +23,7 @@ python verify_paper_claims.py --strict-hash
 
 | Environment | Result |
 |-------------|--------|
-| Author physical archive (`I:\…`) | PASS |
+| Author physical archive (`<local drive>`) | PASS |
 | **Clean GitHub clone** (`_clean_clone/FSOT-2.1-Lean`, commit `81bc893`) | **PASS** (~25 s bundle; see `CLEAN_CLONE_REPRO_REPORT.md`) |
 
 Oracle hash, 394/394 green, contested 0.030%, `overall_ok`, 1863 obligations, `sorry=0`, `ZERO_FREE`.
@@ -54,7 +54,7 @@ Oracle hash, 394/394 green, contested 0.030%, `overall_ok`, 1863 obligations, `s
 ## Build PDF
 
 ```powershell
-cd C:\Users\damia\Desktop\arxiv-papers\01-fsot-formal-contested-cosmology
+cd <local folder, not included in repo: 01-fsot-formal-contested-cosmology>
 pdflatex paper.tex
 bibtex paper
 pdflatex paper.tex
@@ -68,7 +68,7 @@ pdflatex paper.tex
 1. **Push freeze tag** (when ready):  
    `.\create_github_freeze_tag.ps1 -Push`  
    (pushes `v2.6-arxiv-paper01` → commit `81bc893` on GitHub)
-2. Optional: clean-machine clone test (not only I:\ archive).  
+2. Optional: clean-machine clone test (not only <local drive> archive).  
 3. Submit via arXiv using `SUBMIT_ARXIV.md`.
 
 ---

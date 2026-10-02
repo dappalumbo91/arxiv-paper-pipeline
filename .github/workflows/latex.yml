@@ -14,11 +14,6 @@ jobs:
     name: ${{ matrix.name }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    # Paper 02 currently has a Markdown ```bash fence inside the .tex
-    # (reproducibility section, ~line 324) which stops pdflatex with
-    # "Missing $ inserted". It is reported here but does not fail the
-    # workflow until the manuscript is fixed; remove `known_broken` then.
-    continue-on-error: ${{ matrix.known_broken }}
     strategy:
       fail-fast: false
       matrix:
@@ -26,23 +21,18 @@ jobs:
           - name: template
             dir: _template
             tex: paper.tex
-            known_broken: false
           - name: paper 01
             dir: papers/01-fsot-formal-contested-cosmology
             tex: 01-fsot-formal-contested-cosmology.tex
-            known_broken: false
           - name: paper 01 (arxiv_upload)
             dir: papers/01-fsot-formal-contested-cosmology/arxiv_upload
             tex: 01-fsot-formal-contested-cosmology.tex
-            known_broken: false
-          - name: paper 02 (known LaTeX error)
+          - name: paper 02
             dir: papers/02-fsot-fuel-lab-formal
             tex: 02-fsot-fuel-lab-formal.tex
-            known_broken: true
-          - name: paper 02 arxiv_upload (known LaTeX error)
+          - name: paper 02 (arxiv_upload)
             dir: papers/02-fsot-fuel-lab-formal/arxiv_upload
             tex: 02-fsot-fuel-lab-formal.tex
-            known_broken: true
     steps:
       - uses: actions/checkout@v4
       - name: Install TeX Live (minimal set)

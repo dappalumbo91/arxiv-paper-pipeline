@@ -14,18 +14,18 @@ description: >
 This skill codifies the **Paper 01** process so every future paper is produced the same way: top to bottom, reproducible, no admin checklist inside the PDF.
 
 **Canonical human playbook (Desktop):**  
-`C:\Users\damia\Desktop\arxiv-papers\PLAYBOOK.md`
+`PLAYBOOK.md`
 
 **Scaffold template:**  
-`C:\Users\damia\Desktop\arxiv-papers\_template\`
+`_template`
 
 **Scaffold command:**  
 ```powershell
-C:\Users\damia\Desktop\arxiv-papers\new-paper.ps1 -Slug "02-short-topic-name" -Title "Working Title Here"
+new-paper.ps1 -Slug "02-short-topic-name" -Title "Working Title Here"
 ```
 
 **Reference paper (worked example):**  
-`C:\Users\damia\Desktop\arxiv-papers\01-fsot-formal-contested-cosmology\`
+`<local folder, not included in repo: 01-fsot-formal-contested-cosmology>`
 
 ---
 

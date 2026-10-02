@@ -1,0 +1,46 @@
+name: LaTeX build check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: template
+            dir: _template
+            tex: paper.tex
+          - name: paper 01
+            dir: papers/01-fsot-formal-contested-cosmology
+            tex: 01-fsot-formal-contested-cosmology.tex
+          - name: paper 01 (arxiv_upload)
+            dir: papers/01-fsot-formal-contested-cosmology/arxiv_upload
+            tex: 01-fsot-formal-contested-cosmology.tex
+          - name: paper 02
+            dir: papers/02-fsot-fuel-lab-formal
+            tex: 02-fsot-fuel-lab-formal.tex
+          - name: paper 02 (arxiv_upload)
+            dir: papers/02-fsot-fuel-lab-formal/arxiv_upload
+            tex: 02-fsot-fuel-lab-formal.tex
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TeX Live (minimal set)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends \
+            texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended lmodern cm-super latexmk
+      - name: Build (pdflatex + bibtex, halt on error)
+        working-directory: ${{ matrix.dir }}
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error "${{ matrix.tex }}"

@@ -65,7 +65,7 @@ Do **not** upload the entire FSOT repo as the paper source—link it.
 ## 4. Build PDF locally (Windows)
 
 ```powershell
-cd C:\Users\damia\Desktop\arxiv-papers\01-fsot-formal-contested-cosmology
+cd <local folder, not included in repo: 01-fsot-formal-contested-cosmology>
 pdflatex paper.tex
 bibtex paper
 pdflatex paper.tex

@@ -508,7 +508,7 @@ Grok and Cursor assisted manuscript assembly and repository orchestration. Gener
 - **One-command verification:** `python scripts/run_publication_verification_bundle.py`  
 - **License:** see repository `LICENSE` (Apache-2.0 for formal sources as declared there)  
 - **This manuscript workspace:** `Desktop/arxiv-papers/01-fsot-formal-contested-cosmology/`  
-- **Physical archive (author):** `I:\FSOT-Physical-Archive\02_FSOT-2.1-Lean-Full`
+- **Physical archive (author):** `FSOT-2.1-Lean`
 
 ---
 

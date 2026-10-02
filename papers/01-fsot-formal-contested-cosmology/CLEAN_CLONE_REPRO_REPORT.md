@@ -1,7 +1,7 @@
 # Clean-clone reproduction report
 
 **Date:** 2026-07-31  
-**Machine:** author Windows workstation, **fresh GitHub clone** (not `I:\` archive)  
+**Machine:** author Windows workstation, **fresh GitHub clone** (not `<local drive>` archive)  
 **Clone path:** `Desktop/arxiv-papers/_clean_clone/FSOT-2.1-Lean`  
 **Purpose:** prove a scientist can reproduce paper claims from GitHub alone.
 

@@ -31,7 +31,7 @@ if (-not $Root) {
   if ($PSScriptRoot) { $Root = $PSScriptRoot }
   else { $Root = Split-Path -Parent $MyInvocation.MyCommand.Path }
 }
-if (-not $Root) { $Root = "C:\Users\damia\Desktop\arxiv-papers" }
+if (-not $Root) { $Root = (Get-Location).Path }
 $Root = (Resolve-Path $Root).Path
 
 # Normalize slug: allow "02-foo" or "foo"

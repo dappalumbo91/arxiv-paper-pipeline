@@ -1,5 +1,7 @@
 ﻿# arXiv Paper Pipeline
 
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+
 Reproducible **start-to-finish process** for writing arXiv papers, plus a living archive of manuscripts produced with it.
 
 **Author:** Damian Arthur Palumbo  
